@@ -96,6 +96,7 @@ def build_daily_excel():
         ws.cell(1,2*i + 1).value = i+1
         ws.cell(2,2*i + 1).value = date[i+1]
 
+    # 将每个日期下包含两列（日志，计划），将第一行（星期）、第二行（日期）故将1、2行两两合并单元格
     for i in range(0,date.__len__() + 1):
         ws.merge_cells(start_row=1,start_column=2*i+1,end_row=1,end_column=2*i + 2)
         ws.merge_cells(start_row=2,start_column=2*i+1,end_row=2,end_column=2*i + 2)
